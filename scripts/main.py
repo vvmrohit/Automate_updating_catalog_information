@@ -19,7 +19,7 @@ def main():
             description.append(dict)
         
     #This is the part where we need to generate report
-    pdf_body = ""
+    pdf_body = "<br/>\n".join([f"name: {d['name']}\nweight: {d['weight']}"for d in description])
     current_datetime = datetime.now()
     formated_date = current_datetime.strftime("%B %d, %Y")
     title = "Processed Update on {}".format(formated_date)
